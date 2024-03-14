@@ -26,7 +26,7 @@ function BookmarkDetails() {
   return (
     <article>
       <h3>
-        {true ? <span>⭐️</span> : null} {bookmark.name}
+        {bookmark.is_favorite ? <span>⭐️</span> : null} {bookmark.name}
       </h3>
       <h5>
         <span>
@@ -43,7 +43,7 @@ function BookmarkDetails() {
           </Link>
         </div>
         <div>
-          <Link to={`/bookmarks/id/edit`}>
+          <Link to={`/bookmarks/${id}/edit`}>
             <button>Edit</button>
           </Link>
         </div>

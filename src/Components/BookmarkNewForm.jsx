@@ -83,7 +83,7 @@ function BookmarkNewForm() {
         <textarea
           id="description"
           name="description"
-          value={bookmark.description}
+          value={bookmark.description || ""}
           onChange={handleTextChange}
           placeholder="Describe why you bookmarked this site"
         />
