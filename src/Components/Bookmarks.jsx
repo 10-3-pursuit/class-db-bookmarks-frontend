@@ -1,11 +1,21 @@
 import { useState, useEffect } from "react";
 import Bookmark from "./Bookmark";
 
-const API = import.meta.env.VITE_API_URL;
+const API = import.meta.env.VITE_BASE_URL;
 
 function Bookmarks() {
   const [bookmarks, setBookmarks] = useState([]);
-  useEffect(() => {}, []);
+  useEffect(() => {
+    fetch(`${API}/bookmarks`)
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setBookmarks(data);
+      })
+      .catch((error) => console.error(error));
+  }, []);
+
   return (
     <div className="Bookmarks">
       <section>
