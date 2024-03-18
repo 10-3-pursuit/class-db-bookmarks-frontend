@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
+import Reviews from './Reviews'
+
 const API = import.meta.env.VITE_BASE_URL;
 
 function BookmarkDetails() {
@@ -51,6 +53,7 @@ function BookmarkDetails() {
           <button onClick={deleteBookmark}>Delete</button>
         </div>
       </div>
+      <Reviews />
     </article>
   );
 }
